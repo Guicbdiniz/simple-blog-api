@@ -1,0 +1,22 @@
+{
+  "name": "simple-blog-api",
+  "version": "1.0.0",
+  "description": "Simple GraphQL Blog API",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "npx jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/Guicbdiniz/simple-blog-api"
+  },
+  "keywords": [
+    "GraphQL",
+    "Prisma",
+    "Typescript",
+    "Blog",
+    "API"
+  ],
+  "author": "Guicbdiniz",
+  "license": "ISC"
+}
