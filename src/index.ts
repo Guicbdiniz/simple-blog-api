@@ -7,5 +7,5 @@ const server = createServer({
 });
 
 server.start().then(() => {
-  console.log(`🚀 GraphQL Server ready port ${port}`);
+  console.log(`🚀 GraphQL Server ready on port ${port}`);
 });
