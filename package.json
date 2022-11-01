@@ -8,6 +8,9 @@
     "build": "npx tsc",
     "dev": "ts-node-dev src/index.ts"
   },
+  "prisma": {
+    "seed": "ts-node-dev prisma/seed.ts"
+  },
   "repository": {
     "type": "git",
     "url": "github.com/Guicbdiniz/simple-blog-api"
@@ -25,8 +28,12 @@
     "@types/jest": "^29.2.0",
     "@types/node": "^18.11.8",
     "jest": "^29.2.2",
+    "prisma": "^4.5.0",
     "ts-jest": "^29.0.3",
     "ts-node-dev": "^2.0.0",
     "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.5.0"
   }
 }
