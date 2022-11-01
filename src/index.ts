@@ -1,9 +1,11 @@
-async function main() {
-  console.log("Hello world!");
-}
+import { createServer } from "@graphql-yoga/node";
 
-main()
-  .then(() => {})
-  .catch((e) => console.error(e));
+const port = Number(process.env.API_PORT) || 4000;
 
-export default {};
+const server = createServer({
+  port,
+});
+
+server.start().then(() => {
+  console.log(`🚀 GraphQL Server ready port ${port}`);
+});
