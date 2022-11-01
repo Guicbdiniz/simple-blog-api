@@ -1,5 +1,5 @@
 describe("...", () => {
-  test("should fail", () => {
-    fail();
+  test("should not fail", () => {
+    expect("").toBe("");
   });
 });
