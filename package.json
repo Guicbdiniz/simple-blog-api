@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",
-    "build": "npx tsc",
+    "build": "tsc",
+    "generate": "prisma generate",
+    "migrate": "prisma migrate",
     "dev": "ts-node-dev src/index.ts"
   },
   "prisma": {
