@@ -7,7 +7,7 @@ Simple GraphQL Blog API.
 - Developed using [Typescript](https://www.typescriptlang.org/) as main language.
 - Tested using [Jest](https://jestjs.io/pt-BR/) and [ts-jest](https://www.npmjs.com/package/ts-jest).
 - [PostgreSQL](https://www.postgresql.org/) is used to store data and [Prisma](https://www.prisma.io/) is used to map data to objects.
-- GraphQL schemas are defined and generated using [Photos](https://pothos-graphql.dev/).
+- GraphQL schemas are defined and generated using [Pothos](https://pothos-graphql.dev/).
 - [GraphQL Yoga](https://www.the-guild.dev/graphql/yoga-server) is used as server.
 
 ## Usage
