@@ -41,8 +41,8 @@ npm run build
 
 ## TODO
 
-[ ] Create initial schema with Posts and Users.
-[ ] Add authentication system.
-[ ] Deploy to AWS (or any other cloud).
-[ ] Integrate with the front-end application.
-[ ] Create deployment workflow after merge to master.
+- [ ] Create initial schema with Posts and Users.  
+- [ ] Add authentication system.  
+- [ ] Deploy to AWS (or any other cloud).  
+- [ ] Integrate with the front-end application. 
+- [ ] Create deployment workflow after merge to master. 
