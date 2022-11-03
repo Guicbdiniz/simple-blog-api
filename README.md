@@ -19,12 +19,19 @@ npm i
 ```
 
 Create a `.env` file with the necessary variables:
+
 - `DATABASE_URL`: Postgre database URL.
 
 Reset and seed the database:
 
 ```shell
 npx prisma migrate reset
+```
+
+Generate the Prisma client and the Pothos builder:
+
+```shell
+npm run generate
 ```
 
 Start the GraphQL server (in dev mode):
@@ -41,8 +48,10 @@ npm run build
 
 ## TODO
 
-- [ ] Create initial schema with Posts and Users.  
-- [ ] Add authentication system.  
-- [ ] Deploy to AWS (or any other cloud).  
-- [ ] Integrate with the front-end application. 
-- [ ] Create deployment workflow after merge to master. 
+- [x] Create initial query schema with Posts and Users.
+- [ ] Update query schema with more complex operations.
+- [ ] Create mutations schema to create, update and delete Posts and Users.
+- [ ] Add authentication system.
+- [ ] Deploy to AWS (or any other cloud).
+- [ ] Integrate with the front-end application.
+- [ ] Create deployment workflow after merge to master.
