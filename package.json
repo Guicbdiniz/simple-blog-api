@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "build": "tsc",
-    "generate": "prisma generate",
+    "generate": "prisma generate deploy",
     "migrate": "prisma migrate",
     "dev": "ts-node-dev src/index.ts"
   },
