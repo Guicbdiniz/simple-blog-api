@@ -50,7 +50,7 @@ npm run build
 
 - [x] Create initial query schema with Posts and Users.
 - [x] Update query schema with more complex operations.
-- [ ] Create mutations schema to create, update and delete Posts and Users.
+- [x] Create mutations schema to create, update and delete Posts and Users.
 - [ ] Add authentication system.
 - [ ] Deploy to AWS (or any other cloud).
 - [ ] Integrate with the front-end application.

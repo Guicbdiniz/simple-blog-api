@@ -33,5 +33,7 @@ export function createSchemaBuilder() {
 
   builder.queryType({});
 
+  builder.mutationType({});
+
   return builder;
 }

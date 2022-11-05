@@ -43,4 +43,75 @@ export function addAuthorToSchemaBuilder(
       },
     })
   );
+
+  builder.mutationField("createAuthor", (mutationFieldBuilder) =>
+    mutationFieldBuilder.prismaField({
+      type: "Author",
+      args: {
+        name: mutationFieldBuilder.arg({
+          type: "String",
+          required: true,
+          description: "Authors name",
+        }),
+      },
+      resolve: async (query, _root, args) => {
+        return db.author.create({
+          ...query,
+          data: {
+            name: args.name,
+          },
+        });
+      },
+    })
+  );
+
+  builder.mutationField("deleteAuthor", (mutationFieldBuilder) =>
+    mutationFieldBuilder.prismaField({
+      type: "Author",
+      args: {
+        id: mutationFieldBuilder.arg({
+          type: "Int",
+          required: true,
+          description: "Author Id",
+        }),
+      },
+      resolve: (query, _root, args) => {
+        return db.author.delete({
+          ...query,
+          where: {
+            id: args.id,
+          },
+        });
+      },
+    })
+  );
+
+  builder.mutationField("updateAuthor", (mutationFieldBuilder) =>
+    mutationFieldBuilder.prismaField({
+      type: "Author",
+      args: {
+        id: mutationFieldBuilder.arg({
+          type: "Int",
+          required: true,
+          description: "Author Id",
+        }),
+        name: mutationFieldBuilder.arg({
+          type: "String",
+          required: false,
+          description: "Authors name",
+        }),
+      },
+      resolve: (query, _root, args) => {
+        return db.author.update({
+          ...query,
+          where: {
+            id: args.id,
+          },
+          data: {
+            name: args.name || undefined,
+          },
+        });
+      },
+    })
+  );
 }
