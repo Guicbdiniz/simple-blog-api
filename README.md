@@ -49,7 +49,7 @@ npm run build
 ## TODO
 
 - [x] Create initial query schema with Posts and Users.
-- [ ] Update query schema with more complex operations.
+- [x] Update query schema with more complex operations.
 - [ ] Create mutations schema to create, update and delete Posts and Users.
 - [ ] Add authentication system.
 - [ ] Deploy to AWS (or any other cloud).

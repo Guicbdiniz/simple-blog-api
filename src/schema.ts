@@ -22,7 +22,7 @@ export class APISchemaBuilder {
   constructor(db: PrismaClient) {
     const builder = createSchemaBuilder();
     addAuthorToSchemaBuilder(builder, db);
-    addPostToSchemaBuilder(builder);
+    addPostToSchemaBuilder(builder, db);
     this.schema = builder.toSchema();
   }
 

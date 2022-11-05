@@ -21,4 +21,26 @@ export function addAuthorToSchemaBuilder(
       },
     })
   );
+
+  builder.queryField("author", (queryFieldBuilder) =>
+    queryFieldBuilder.prismaField({
+      type: "Author",
+      nullable: true,
+      args: {
+        id: queryFieldBuilder.arg({
+          type: "Int",
+          required: true,
+          description: "Id arg",
+        }),
+      },
+      resolve: async (query, _root, args, _ctx, _info) => {
+        return db.author.findUnique({
+          ...query,
+          where: {
+            id: args.id,
+          },
+        });
+      },
+    })
+  );
 }

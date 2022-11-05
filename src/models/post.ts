@@ -1,6 +1,10 @@
+import { PrismaClient } from "@prisma/client";
 import { APIPothosSchemaBuilder } from "../builder";
 
-export function addPostToSchemaBuilder(builder: APIPothosSchemaBuilder) {
+export function addPostToSchemaBuilder(
+  builder: APIPothosSchemaBuilder,
+  db: PrismaClient
+) {
   builder.prismaObject("Post", {
     fields: (fieldBuilder) => ({
       id: fieldBuilder.exposeID("id"),
@@ -11,4 +15,35 @@ export function addPostToSchemaBuilder(builder: APIPothosSchemaBuilder) {
       }),
     }),
   });
+
+  builder.queryField("posts", (queryFieldBuilder) =>
+    queryFieldBuilder.prismaField({
+      type: ["Post"],
+      resolve: async (query) => {
+        return db.post.findMany({ ...query });
+      },
+    })
+  );
+
+  builder.queryField("post", (queryFieldBuilder) =>
+    queryFieldBuilder.prismaField({
+      type: "Post",
+      nullable: true,
+      args: {
+        id: queryFieldBuilder.arg({
+          type: "Int",
+          required: true,
+          description: "Id arg",
+        }),
+      },
+      resolve: async (query, _root, args) => {
+        return db.post.findFirst({
+          ...query,
+          where: {
+            id: args.id,
+          },
+        });
+      },
+    })
+  );
 }
